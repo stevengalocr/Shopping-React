@@ -5,7 +5,7 @@ const styles = {
     products: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-around'
     }
 }
 

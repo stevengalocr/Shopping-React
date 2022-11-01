@@ -1,8 +1,8 @@
 import { Component } from 'react'
 
-const Styles = {
+const styles = {
     button: {
-        backgroundColor: '#0A283E',
+        backgroundColor: '#5A65E9',
         color: '#FFF',
         padding: '10px 20px',
         border: 'none',
@@ -14,7 +14,7 @@ const Styles = {
 class Button extends Component {
     render() {
         return (
-            <button style={Styles.button} {...this.props} />
+            <button style={styles.button} {...this.props} />
         )
     }
 }
