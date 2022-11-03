@@ -12,13 +12,15 @@ class App extends Component {
       { name: 'Top', price: '$70', img: '/products/Top.jpg' },
     ],
     cart: [],
+    isCartVisible: false,
+
   }
 
   addCart = (product) => {
     const { cart } = this.state
     if (cart.find(x => x.name === product.name)) {
       const newCart = cart.map(x => x.name === product.name ? ({
-        ...x, 
+        ...x,
         amount: x.amount + 1
       })
         : x)
@@ -32,10 +34,19 @@ class App extends Component {
     })
   }
 
+  showCart = () => {
+    if(!this.state.cart.length) {
+      return
+    }
+    this.setState({ isCartVisible: !this.state.isCartVisible })
+  }
+
   render() {
+    const { isCartVisible } = this.state
+
     return (
       <div>
-        <Navbar cart ={this.state.cart}/>
+        <Navbar cart={this.state.cart} isCartVisible={isCartVisible} showCart={this.showCart} />
         <Layout>
           <Title />
           <Products
