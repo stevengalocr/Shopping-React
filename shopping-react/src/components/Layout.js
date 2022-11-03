@@ -8,8 +8,7 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
     },
-    container: {
-        
+    container: {        
         width: '1200px'
     }
 }
